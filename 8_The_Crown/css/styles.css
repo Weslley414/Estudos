@@ -1,0 +1,988 @@
+/* GERAL */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica;
+    box-sizing: border-box;
+}
+
+
+/* fundo sólido */
+body {
+  background: #fdfbf2; /* troque pelo hex desejado */
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+    color: #ffecb3;
+}
+
+p {
+    color: #ffffff;
+}
+
+/* NAVBAR */
+.navbar-containe {
+    width: 100%;
+    height: 80px;
+    background: transparent;
+    padding: 0 2rem;
+    z-index: 10;
+}
+
+nav {
+    position: relative;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.Logo {
+    width: 65px;
+    margin-top: 15px;
+}
+
+.navbar-items {
+    position: absolute;
+    right: 0;
+    height: 80px;
+    line-height: 80px;
+    margin: 0;
+    display: inline-block;
+}
+
+.navbar-items li {
+    display: inline-block;
+    text-transform: uppercase;
+    margin-left: 25px;
+}
+
+.navbar-items a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.navbar-items a:hover {
+    color: #ffecb3;
+}
+
+/* main banner */
+.main-banner {
+    background-image: url("../img/Design\ sem\ nome\ \(1\).png");
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+    height: 100vh;
+    position: relative; 
+    justify-content: center; /* centraliza verticalmente */
+    align-items: center;     /* centraliza horizontalmente */
+    min-height: 100vh;       /* ocupa a altura da viewport */
+    padding: 0;              /* remova padding grande que empurra o conteúdo */  
+    display: flex;
+    padding: 16rem 0; 
+    display: block;
+}
+
+/* overlay para contraste do texto sobre a imagem */
+.main-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.35));
+  z-index: 5;
+  pointer-events: none;
+}
+
+.main-banner h1,
+.main-banner p {
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: #000 3px 2px 3px;
+}
+
+.main-banner h1 {
+    font-size: 54px;
+}
+
+.main-banner p {
+    font-size: 32px;
+}
+
+.navbar-containe {
+  position: absolute;       /* essencial para z-index funcionar */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: transparent;
+  padding: 0 2rem;
+  z-index: 20;              /* acima do ::before (que tem z-index:5) */
+}
+
+.section-about {
+  max-width: 900px;
+  margin: 3rem auto 2rem;
+  padding: 0 1rem;
+  text-align: left;              /* troque para center se quiser centralizado */
+}
+
+.section-about h1 {
+  font-size: 36px;
+  color: #d4af37;                /* dourado */
+  line-height: 1.2;
+  margin: 0 0 1rem 0;
+  position: relative;
+}
+
+/* traço sutil abaixo do título */
+.section-about h1::before {
+  content: "";
+  display: block;
+  width: 68px;                   /* ajuste conforme o visual desejado */
+  height: 3px;
+  background: #ffecb3;
+  margin-top: 0.5rem;
+  opacity: 0.85;
+  width: 68px;
+  margin: 0 auto 0.5rem auto; 
+}
+
+.section-about p {
+  color: #0b0b0b;
+  font-size: 18px;
+  line-height: 1.7;
+  margin: 0;
+  opacity: 0.95;
+}
+
+/* responsivo */
+@media (max-width: 768px) {
+  .section-about { margin: 2rem auto 1.5rem; }
+  .section-about h1 { font-size: 28px; }
+  .section-about h1::after { width: 56px; }
+  .section-about p { font-size: 16px; }
+}
+
+.section-about { text-align: center; }
+.section-about h1::after { margin: 0.5rem auto 0; }
+
+/* Container em 2 colunas */
+.season-grid.two-cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 2rem;
+  max-width: 900px;       /* controla largura total do bloco */
+  margin: 2rem auto;      /* centraliza na página */
+  padding: 0 1rem;
+}
+
+/* Cards */
+.season-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #ffecb3;
+  border-radius: 8px;
+  padding: 1.5rem;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.season-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px #ffecb3;
+}
+
+/* Tipografia interna */
+.season-info h2 {
+  font-size: 22px;
+  color: #ffecb3;
+  margin-bottom: 0.4rem;
+}
+
+.season-info .period,
+.season-info .year {
+  display: block;
+  font-size: 16px;
+  opacity: 0.85;
+  margin: 0.2rem 0;
+}
+
+.season-info p {
+  font-size: 14px;
+  margin: 0.4rem 0 0.6rem;
+  opacity: 0.9;
+  color: #000;
+}
+
+
+.section-about .titulo-galeria {
+  color: #70192f !important;
+}
+
+/* Remover qualquer pseudo-elemento do título Galeria */
+.section-about h1.titulo-galeria::before,
+.section-about h1.titulo-galeria::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Se algum reset não pegar, zere margens que possam parecer linha */
+.section-about h1.titulo-galeria {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+
+
+/* Linha do tempo dourada animada */
+.timeline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 0%;
+  background: linear-gradient(to right, #ffecb3, #fff176);
+  transition: width 1s ease;
+}
+
+.season-card:hover .timeline {
+  width: 100%;
+}
+
+/* Responsivo: 1 coluna no mobile */
+@media (max-width: 768px) {
+  .season-grid.two-cols {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+  }
+}
+
+/* wrapper que centraliza horizontal e verticalmente */
+.season-title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  padding: 1rem;
+}
+
+/* estilo do título */
+.season-title {
+  margin: 0;                 /* remove margem padrão do h1 */
+  font-size: 36px;
+  color: #70192f;
+  text-align: center;
+  line-height: 1;
+}
+
+/* Grid 2 colunas */
+/* Grid 2 colunas */
+.season-grid.two-cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Card */
+.season-card {
+  background: rgba(255,255,255,0.04);
+  border-radius: 10px;
+  padding: 1.6rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform .28s ease, box-shadow .28s ease;
+}
+
+/* Hover dourado */
+.season-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(255,236,179,0.12), 0 0 18px rgba(255,236,179,0.06);
+}
+
+/* Conteúdo do card alinhado como na imagem */
+.season-info {
+  text-align: left;            /* título à esquerda */
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* Título em destaque (serif) */
+.season-info h2 {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 20px;
+  color: #ffecb3;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+/* Meta: período à esquerda e ano em badge à direita */
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.period {
+  font-size: 15px;
+  color: rgba(255,255,255,0.95);
+}
+
+.year {
+  font-size: 13px;
+  color: #222;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+/* Descrição menor e com espaçamento */
+.description {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.5;
+}
+
+/* Linha do tempo dourada animada */
+.timeline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 0%;
+  background: linear-gradient(90deg, #ffecb3, #fff176);
+  transition: width .9s ease;
+}
+
+.season-card:hover .timeline {
+  width: 100%;
+}
+
+/* Responsivo: 1 coluna no mobile */
+@media (max-width: 768px) {
+  .season-grid.two-cols {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+  }
+}
+
+/* badge que comporta o período */
+.badge {
+  display: inline-block;
+  background: #ffecb3;
+  color: #222;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 13px;
+  min-width: 64px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* se você quiser esconder a .period quando usar a badge */
+.meta .period.hidden {
+  display: none;
+}
+
+/* Header com título e badge na mesma linha, alinhados pela baseline */
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+/* Título sem margens e com linha de base consistente */
+.header-row h2 {
+  margin: 0;
+  line-height: 1;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 20px;
+  color: #70192f;
+}
+
+/* Badge alinhado e sem borda visível */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: #ffecb3;
+  color: #222;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1;
+  border: none;            /* remove borda */
+  box-shadow: none;        /* remove sombra */
+  outline: none;           /* remove outline de foco */
+}
+
+/* Caso a borda que você vê seja a do card inteiro, remova-a assim */
+.season-card.no-border {
+  border: none;
+}
+
+/* Ajuste fino se ainda parecer desalinhado (mude o valor se necessário) */
+.badge.adjust {
+  transform: translateY(1px);
+}
+
+/* === CARD VERTICAL EXATO DA IMAGEM === */
+.season-card.vertical {
+  width: 260px !important;
+  background: #1d1d1d !important;
+  border-radius: 14px !important;
+  padding: 14px !important;
+  border: 1px solid #333 !important;
+  box-shadow: 0 0 4px rgba(0,0,0,0.4) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+
+/* IMAGEM */
+.season-card.vertical .card-media {
+  width: 100% !important;
+  height: 230px !important;
+  border-radius: 10px !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+.season-card.vertical .card-media img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* BADGE */
+.season-card.vertical .badge {
+  position: absolute !important;
+  left: 12px !important;
+  top: 12px !important;
+  background: #f2d15b !important;
+  padding: 4px 14px !important;
+  border-radius: 20px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: #000 !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.25) !important;
+}
+
+/* TÍTULO */
+.season-card.vertical .title {
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  font-family: Georgia, serif !important;
+  color: #f2d15b !important;
+  margin: 0 !important;
+}
+
+/* TEXTO */
+.season-card.vertical .description {
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+  color: #d1d1d1 !important;
+  margin: 0 !important;
+  margin-top: -6px !important;
+}
+
+/* LINHA */
+.season-card.vertical .divider {
+  width: 100% !important;
+  height: 2px !important;
+  border-radius: 2px !important;
+  background: #f2d15b !important;
+  margin-top: 4px !important;
+  opacity: 0.8 !important;
+}
+
+.card {
+  width: 18rem;
+  border: 2px solid #d4af37; /* Dourado elegante */
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to bottom, #242424, #242424); /* Azul profundo */
+  color: #fff;
+  font-family: 'Georgia', serif;
+  font-weight: normal; /* trava o peso da fonte */
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card-img-top {
+  border-bottom: 2px solid #d4af37;
+  object-fit: cover;
+  height: 250px;
+  width: 100%;
+}
+
+.card-body {
+  padding: 1rem;
+  text-align: center;
+}
+
+.season-title2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #d4af37;
+  text-align: center;
+  position: relative;
+}
+
+/* linha amarela acima */
+.season-title2::before {
+  content: "";
+  display: block;
+  width: 68px;
+  height: 3px;
+  background: #f2d15b; /* amarelo */
+  margin: 0 auto 0.5rem auto;
+  opacity: 0.85;
+}
+
+
+.card-text {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #e0e0e0;
+}
+
+.characters-grid {
+  display: flex;
+  flex-wrap: wrap;       /* permite quebrar linha se não couber */
+  gap: 1.5rem;           /* espaço entre os cards */
+  justify-content: center; /* centraliza os cards */
+  margin: 2rem auto;
+  max-width: 1200px;     /* controla largura máxima */
+}
+
+.characters-grid .card {
+  flex: 1 1 250px;       /* cada card ocupa mínimo 250px */
+  max-width: 280px;      /* limite de largura */
+}
+
+.section-about2 {
+  max-width: 900px;
+  padding: 0 1rem;
+  text-align: left;              /* troque para center se quiser centralizado */ 
+}
+
+.section-about2 h1 {
+  font-size: 36px;
+  color: #d4af37;                /* dourado */
+  line-height: 1.2;
+  margin: 0 0 1rem 0;
+  position: relative;
+}
+
+.section-about2 h1:before {
+  content: "";
+  display: block;
+  width: 68px;                   /* ajuste conforme o visual desejado */
+  height: 3px;
+  background: #ffecb3;
+  margin-top: 0.5rem;
+  opacity: 0.85;
+  width: 68px;
+  margin: 0 auto 0.5rem auto;
+}
+
+.season-title2 {
+  margin: 0;                 /* remove margem padrão do h1 */
+  font-size: 36px;
+  color: #d4af37;
+  text-align: center;
+  line-height: 1;
+}
+
+.intro-text {
+  color: #0b0b0b;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-top: -3rem;     /* sobe a frase */
+  margin-bottom: 2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.95;
+}
+
+.card-title{
+  color: #d4af37;
+  font-size: 1.1rem;    /* aumenta o tamanho */
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* Faixa em largura total */
+.characters-band {
+  width: 100vw;
+  /* estica além de containers centralizados */
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+
+  background: linear-gradient(to bottom, #141414, #141414); /* dourado suave */
+  padding: 3rem 0; /* espaçamento vertical da faixa */
+}
+
+/* Conteúdo centralizado dentro da faixa */
+.characters-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Como a frase já estava muito distante, garantimos proximidade do título */
+.intro-text {
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0.75rem auto 2rem auto; /* aproxima do título e espaça dos cards */
+  max-width: 700px;
+  opacity: 0.95;
+}
+
+.characters-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "card1 card2 card3"
+    "card4 card5 .";
+  gap: 1.5rem;
+  justify-items: center;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.coroa-img {
+  max-width: 300px; /* ou 100%, se quiser responsivo */
+  height: auto;
+  display: block;
+  margin: 0 auto; /* centraliza */
+}
+
+
+.royal-gallery {
+  padding: 3rem 1rem;
+  background: #fdfaf2;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  text-align: center;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item h3 {
+  margin-top: 0.75rem;
+  font-size: 1.1rem;
+  color: #080808;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 200px; /* altura fixa */
+  object-fit: cover; /* mantém proporção e preenche sem distorcer */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease; /* suaviza o efeito */
+}
+
+.gallery-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.gallery-button {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #f2d15b;
+  color: #9b8740;
+  background: transparent;
+  border-radius: 30px;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.gallery-button:hover {
+  background: #f2d15b;
+  color: #000;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05); /* aumenta 5% ao passar o mouse */
+}
+
+.review-section {
+  background-color: #3b0a0a; /* vermelho escuro */
+  padding: 3rem 1rem;
+  width: 100%;
+  color: #fff;
+}
+
+.review-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #f2d15b; /* amarelo */
+  margin-bottom: 0.5rem;
+  position: relative; /* necessário para o ::before funcionar corretamente */
+}
+
+/* linha amarela acima */
+.review-title::before {
+  content: "";
+  display: block;
+  width: 68px;       /* largura da linha */
+  height: 3px;       /* espessura da linha */
+  background: #f2d15b; /* amarelo */
+  margin: 0 auto 0.5rem auto; /* centraliza e dá espaço abaixo da linha */
+  opacity: 0.85;
+}
+
+
+.review-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.review-card {
+  border: 2px solid #a94442;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background-color: #4d0e0e;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+  transform: scale(1.03);
+}
+
+.review-stars {
+  color: #f2d15b;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.review-source {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #f2d15b;
+}
+
+.review-source i {
+  margin-right: 0.5rem;
+}
+
+.awards-section {
+  background-color: #3b0a0a; /* vinho escuro */
+  padding: 3rem 1rem;
+  width: 100%;
+}
+
+.awards-grid {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.award-item {
+  flex: 1;
+  min-width: 200px;
+}
+
+.award-number {
+  font-size: 4rem;
+  color: #f2d15b; /* amarelo */
+  margin: 0;
+}
+
+.award-label {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-top: 0.5rem;
+}
+
+.footer {
+  background-color: #000; /* fundo preto do rodapé */
+  color: #fff;
+  padding: 3rem 1rem 2rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-logo {
+  width: 120px;
+  margin-bottom: 1rem;
+}
+
+.footer-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.footer-title {
+  color: #f2d15b;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #f2d15b;
+}
+
+.footer-social a {
+  color: #f2d15b;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  transition: transform 0.3s;
+}
+
+.footer-social a:hover {
+  transform: scale(1.2);
+}
+
+.footer-follow {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.footer-bottom {
+  border-top: 2px solid #f2d15b;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.footer-policy {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0;
+  margin-top: 0.5rem;
+}
+
+.footer-policy a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-policy a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

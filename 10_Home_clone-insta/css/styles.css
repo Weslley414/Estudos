@@ -1,0 +1,284 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #0d1015;
+  margin: 0;
+  padding: 0;
+  height: 30px;  /* mobile */
+  height: 32px;  /* desktop (mais comum) */
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 32px;
+}
+
+.left-panel {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-panel img {
+  max-width: 80%;
+}
+
+.right-panel {
+  max-width: 350px;
+  padding: 0;
+  justify-self: start;
+  align-items: stretch;
+}
+
+
+.login-form {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
+
+
+.login-form input {
+  width: 100%;
+  height: 39px;                 /* um pouco menor */
+  padding: 6px 10px;
+  margin-bottom: 6px;
+  background-color: #2b2f33;    /* cinza médio (mais claro) */
+  border: 1px solid #3a3f44;    /* borda bem sutil */
+  border-radius: 6px;           /* IG usa menos “quadrado” */
+  color: #ffffff;
+  font-size: 12px;
+  box-sizing: border-box;
+}
+
+.ig-input input::placeholder {
+  color: #a8a8a8;
+  font-size: 12px;
+}
+
+.ig-input:focus-within {
+  border-color: #737373;
+}
+
+
+.login-form input + input {
+  margin-top: 2px;
+}
+
+.ig-logo {
+  max-height: 235px;
+  width: auto;
+  margin-bottom: 32px;
+}
+
+.ig-input {
+  width: 100%;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+
+  background-color: #1c1e21;
+  border: 1px solid #2f3336;
+  border-radius: 3px;
+
+  box-sizing: border-box;
+  margin-bottom: 6px;
+}
+
+
+.ig-input input::placeholder {
+  color: #b0b3b8;
+  font-size: 12px;
+}
+
+.login-form input::placeholder {
+  color: #a8a8a8;
+}
+
+.login-form button[type="submit"] {
+  width: 100%;
+  padding: 8px;
+  background-color: #2f3dff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.ig-input input {
+  width: 100%;
+  height: 100%;
+
+  padding: 0 8px;
+
+  background: transparent;
+  border: none;
+  outline: none;
+
+  color: #e4e6eb;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+
+
+
+.divider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 18px 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #8e8e8e;
+  text-transform: uppercase;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #262626;
+}
+
+.divider::before {
+  margin-right: 18px;
+}
+
+.divider::after {
+  margin-left: 18px;
+}
+
+
+.facebook-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  margin: 16px 0 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0095f6;
+  text-decoration: none;
+}
+
+.facebook-login svg {
+  width: 20px;
+  height: 35px;
+  flex-shrink: 0;
+}
+
+.forgot-password {
+  font-size: 12px;
+  color: #e0f1ff;
+  text-decoration: none;
+}
+
+.signup-box {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+}
+
+.signup-box a {
+  color: #0095f6;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer {
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  max-width: 1000px;
+}
+
+footer ul li a {
+  color: #999;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+.footer-bottom select {
+  border: none;
+  background: transparent;
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 5px;
+  cursor: pointer;
+  color: rgb(168, 168, 168);
+}
+
+.footer-bottom p {
+  color: rgb(168, 168, 168);
+  font-size: 12px;
+}
+
+.footer-bottom {
+  width: 100%;
+  text-align: center;
+  padding: 4px 0 ;
+  margin-top: -17px;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.footer-row select,
+.footer-row p {
+  font-size: 12px;
+  color: #a8a8a8;
+  margin: 0;
+  padding: 5px 0;
+}
+
+@media (max-width: 875px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .left-panel {
+    display: none;
+  }
+
+  .right-panel {
+    justify-self: center;
+  }
+}
+
+
